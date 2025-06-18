@@ -26,5 +26,7 @@ do
         exit 1
     fi
     echo "Image $i:latest built successfully."
+    echo "Saving and importing image now..."
+    sudo docker save "$i":latest | sudo k3s ctr images import -
     echo "--------------------------------------------------------"
 done
